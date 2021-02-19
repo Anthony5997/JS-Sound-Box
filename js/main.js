@@ -19,7 +19,8 @@ for (let i = 0; i < sounds.length; i++) {
         if (keysound == event.keyCode){
             console.log("cl de event.keyCode[i] =" + event.keyCode);
         //Si la condition est respecté, on ajoute les classes a key
-            key.classList.add('playing','sound');
+            key[i].classList.add('playing','sound');
+            sounds[i].play();
         } 
     
     })
@@ -30,7 +31,10 @@ for (let i = 0; i < sounds.length; i++) {
         if (keysound == event.keyCode){
             console.log("eventkeyCode[i] =" + event.keyCode);
         //On retire les classes ajouté a key
-            key.classList.remove('playing','sound');
+            key[i].classList.remove('playing','sound');
+            sounds[i].pause()
+            sounds[i].currentTime = 0
+
         } 
 
     })
